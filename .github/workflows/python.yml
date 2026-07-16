@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+    environment: dev
     runs-on: ubuntu-latest
 
     steps:
@@ -21,5 +22,9 @@ jobs:
       - name: Check Python Version
         run: python --version
 
+      - name: Dispaly Environment Variables
+        run: |
+          echo "Application Name: ${{ vars.APP_LATHA }}"
+          echo "Environment: ${{ vars.APP_PREE }}"
       - name: Run Python Application
         run: python app.py
